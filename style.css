@@ -1,0 +1,337 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #003366;
+  color: white;
+  padding: 1rem;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+
+
+.channel-name h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.tagline {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: #cce6ff;
+}
+
+.nav-actions .btn {
+  background-color: #ffcc00;
+  color: #003366;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.main-nav {
+  background-color: #0059b3;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-nav ul li {
+  position: relative;
+  left: 28cm
+}
+
+.main-nav ul li a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+ 
+  right: 0;
+  flex-direction: column;
+  background-color: #088ff7;
+  color: red;
+  top: 100%;
+  min-width:160px;
+  z-index: 999;
+  box-shadow: 0px 8px 16px ;
+  
+ cursor: pointer;
+  color: greenyellow;
+
+}
+
+.navbar { overflow: visible;
+
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  color:red;
+}
+
+.mission {
+  max-width: 800px;
+  margin: 50px;
+
+  padding: 20px;
+  border-radius: 12px;
+  background: #f0f8ff;
+  text-align: justify;
+}
+
+.mission h2, .mission h3 {
+  color: #003366;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: #ffcc00;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navbar, .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-actions {
+    margin-top: 1rem;
+  }
+
+  .main-nav ul li {
+    width: 100%;
+  }
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.about-section {
+  padding: 40px 20px;
+  background: #03f4f8;
+ 
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f0f4ff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 1.3rem;
+  color: #2a2a2a;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #003366;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.closing {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  color: #0077b6;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+.signup-btn a {
+  background-color: #ff9800;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.signup-btn a:hover {
+  background-color: #fb8c00;
+}
+
+/* Sign Up Form */
+.signup-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+  text-align: center;
+}
+
+.signup-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-container input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.signup-container button {
+  background-color: #0e1e40;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.signup-container button:hover {
+  background-color: #1a2d5e;
+}
+
+#signup-message {
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+}
+
+.whats-new-container {
+  position: relative;
+  top: 1cm;
+  nav-down: auto;
+  right: left;
+  background-color: #f44336;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  z-index: 1000;
+  border-bottom-left-radius: 10px;
+  max-width: 350px;
+  overflow: hidden;
+}
+
+.whats-new-label {
+  font-weight: bold;
+  margin-right: 10px;
+  white-space: nowrap;
+  color: black;
+}
+.whats-new span {
+  margin nav-right: 30px;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+  margin: 0;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.whats-new span
+{margin-right: 10px;}
+
+.whats-new span
+{
+  
+  color: greenyellow;
+  cursor: pointer;
+  
+}
+.whats-new span
+{
+  color: yellow;
+   text-decoration: underline;
+}
+.whats-new span:hover
+{color: darkblue
+}
