@@ -26,25 +26,51 @@
 
     <!-- Main Content -->
     <div class="main-content">
-      <h1>Welcome - <span id="studentName">Student Name</span></h1>
+      <h1>Welcome - <span id="studentName">Student</span></h1>
       <div class="profile-card">
         <div class="profile-details">
-          <p><strong>Name:</strong> <span id="name">Dileep Kumar Banjare</span></p>
-          <p><strong>Student ID:</strong> <span id="id">S123456</span></p>
-          <p><strong>Gender:</strong> <span id="gender">Male</span></p>
-          <p><strong>Class:</strong> <span id="class">12th</span></p>
-          <p><strong>Date of Birth:</strong> <span id="dob">22 October 1998</span></p>
-          <p><strong>Mobile No:</strong> <span id="mobile">7610353844</span></p>
-          <p><strong>Email ID:</strong> <span id="email">dileepsir22@gmail.com</span></p>
-          <p><strong>Address:</strong> <span id="address">Chhirra, Bilaigarh</span></p>
+          <p><strong>Email ID:</strong> <span id="email">-</span></p>
         </div>
         <div class="profile-photo">
-          <img src="assets/photos/dileeppic.jpg/50" alt="Student Photo" id="photo"/>
+          <img src="assets/photos/dileeppic.jpg" alt="Student Photo" id="photo"/>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="dashboard.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAUm4232lt2pQTWSNsnyojrpmMTPKNU1r8",
+      authDomain: "dk-career-boost.firebaseapp.com",
+      projectId: "dk-career-boost",
+      storageBucket: "dk-career-boost.appspot.com",
+      messagingSenderId: "1020282426285",
+      appId: "1:1020282426285:android:51202a9258041871540724"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        // 🚫 Not logged in
+        window.location.href = "login.html";
+      } else {
+        // ✅ Logged in - show user info
+        document.getElementById("studentName").textContent = user.email;
+        document.getElementById("email").textContent = user.email;
+      }
+    });
+
+    // Logout
+    document.getElementById("logout").addEventListener("click", () => {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      });
+    });
+  </script>
 </body>
 </html>

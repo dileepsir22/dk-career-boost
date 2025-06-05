@@ -1,25 +1,35 @@
-import { auth } from "./firebase-config.js";
-import {
-  signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("login-form");
-  const message = document.getElementById("login-message");
+const firebaseConfig = {
+  apiKey: "AIzaSyAUm4232lt2pQTWSNsnyojrpmMTPKNU1r8",
+  authDomain: "dk-career-boost.firebaseapp.com",
+  projectId: "dk-career-boost",
+  storageBucket: "dk-career-boost.appspot.com",
+  messagingSenderId: "1020282426285",
+  appId: "1:1020282426285:android:51202a9258041871540724"
+};
 
-  loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = document.getElementById("login-email").value.trim();
-    const password = document.getElementById("login-password").value;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      message.style.color = "green";
-      message.textContent = "Login successful!";
-      // Redirect to dashboard.html if you have one
-      // window.location.href = "dashboard.html";
-    } catch (error) {
-      message.textContent = error.message;
-    }
-  });
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const messageDiv = document.getElementById("message");
+  messageDiv.textContent = "";
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      messageDiv.className = "success-message";
+      messageDiv.textContent = "Login successful! Redirecting...";
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1000);
+    })
+    .catch((error) => {
+      messageDiv.className = "error-message";
+      messageDiv.textContent = "Login failed: " + error.message;
+    });
 });
