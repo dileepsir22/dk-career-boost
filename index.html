@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,90 +6,94 @@
   <title>DK Career Boost</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-  <script defer src="login.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
   <header class="navbar">
-<div class="logo">
-  <img src="assets/logos/logo.jpg" alt="DK Career Boost Logo"/>
-</div>
-
+    <div class="logo">
+      <img src="assets/logos/logo.jpg" alt="DK Career Boost Logo"/>
+    </div>
     <div class="channel-name">
       <h1>DK Career Boost</h1>
       <p class="tagline">Boosting Dreams into Reality</p>
     </div>
-    <div class="nav-actions">
-      <a href="signup.html" class="btn">Sign Up</a>
+    <div class="nav-toggle" id="nav-toggle">
+      <i class="fas fa-bars"></i>
     </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#">Home</a>
+      <a href="aboutus.html">About Us</a>
+      
+        <nav class="navbar">
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul class="nav-menu" id="nav-menu">
+    <li class="dropdown">
+      <a href="#">Courses ▾</a>
+      <ul class="submenu">
+        <li class="dropdown-sub">
+          <a href="#">CG Vyapam ▸</a>
+          <ul class="submenu subsubmenu">
+            <li><a href="#">Prayogshala Paricharak</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown-sub">
+          <a href="#">UGC NET ▸</a>
+          <ul class="submenu subsubmenu">
+            <li><a href="#">Geography</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown-sub">
+          <a href="#">School Academy ▸</a>
+          <ul class="submenu subsubmenu">
+            <li><a href="#">6th CG Board</a></li>
+            <li><a href="#">7th CG Board</a></li>
+            <li><a href="#">8th CG Board</a></li>
+            <li><a href="#">10th CG Board</a></li>
+            <li><a href="#">12th CG Board</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <a href="https://youtube.com/@dkcareerboost" target="_blank">YouTube</a>
+      <a href="login.html">Sign In</a>
+      <a href="signup.html" class="btn">Sign Up</a>
+    </nav>
   </header>
- 
 
-  <nav class="main-nav">
-     <div class="whats-new-container">
-    <span class="whats-new-label"> What's New:</span>
-    <div class="marquee">
-     
-      
-
-<marquee class="whats-new">
-  <span>Admission open</span>
- <span> New test series</span>
-   <span> New Batch for ADEO</span>
-  
-</marquee>    </div>
-  </div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-      <li class="dropdown">
-        <a href="#courses">Courses ▾</a>
-        <ul class="dropdown-menu">
-          <div class="dropdown-content">
-          <a href="#cgvyapam">CG Vyapam</a></li>
-          <a href="#ugcnet">UGC NET - GEOGRAPHY</a></li>
-          <a href="#8thboard">8th CG Board</a></li>
-          <a href="#10thboard">10th CG Board</a></li>
-          <a href="#12thboard">12th CG Board</a></li>
-             </div>
-    </ul>
-      
-      <li><a href="https://youtube.com/@dkcareerboost" target="_blank">YouTube</a></li>
-      <li><a href="login.html">Sign In</a></li>
-    </ul>
-  </nav>
+  <section class="marquee-section">
+    <span class="label">What's New:</span>
+    <marquee class="marquee">
+      <span>Admission open</span> | <span>New test series</span> | <span>New Batch for ADEO</span>
+    </marquee>
+  </section>
 
   <section class="mission" id="about">
     <h2>About Our Mission 🎓</h2>
     <h3>Welcome to DK Career Boost ✨ Boosting Dreams into Reality ✨</h3>
     <p>
-      DK Career Boost is not just an educational channel — it's a mission-driven platform created to guide, inspire, and empower every student and aspirant preparing for competitive exams like CG Vyapam, UGC NET (Geography), 10th & 12th Board Exams, and more.
-    </p>
-    <p>
-      With the belief that every student has the potential to succeed, our channel delivers high-quality, easy-to-understand, and exam-oriented content that lights the path toward your goals. Whether you're preparing for your board exams or aiming for a government job, DK Career Boost provides the perfect blend of clarity, strategy, and motivation to help you excel.
-    </p>
-    <h4>📚 What We Offer:</h4>
+DK Career Boost is not just an educational channel — it's a mission-driven platform created to guide, inspire, and empower every student and aspirant preparing for competitive exams like CG Vyapam, UGC NET (Geography), 10th & 12th Board Exams, and more.
+
+With the belief that every student has the potential to succeed, our channel delivers high-quality, easy-to-understand, and exam-oriented content that lights the path toward your goals. Whether you're preparing for your board exams or aiming for a government job, DK Career Boost provides the perfect blend of clarity, strategy, and motivation to help you excel.    </p>
     <ul>
-      <li> Concept-based learning tailored to competitive exams</li>
-      <li> Complete syllabus coverage with smart tips</li>
-      <li> Previous year questions & mock tests</li>
-      <li> Motivational sessions to keep your energy high</li>
-      <li> Personalized guidance for better career planning</li>
+      <li>Concept-based learning tailored to competitive exams</li>
+      <li>Complete syllabus coverage with smart tips</li>
+      <li>Previous year questions & mock tests</li>
+      <li>Motivational sessions to keep your energy high</li>
+      <li>Personalized guidance for better career planning</li>
     </ul>
     <p>
       Our tagline "Boosting Dreams into Reality" reflects our commitment to being your trusted learning partner — turning your hard work into success stories.
     </p>
-    <p>
-      Subscribe now and become a part of the DK Career Boost community, where education meets passion, and learning becomes the fuel to power your dreams!
-    </p>
   </section>
 
- 
   <footer>
     <div class="contact">
-      <p> <i class="fas fa-enelope"></i>
-         E-mail: dkcareerboost@gmail.com</p>
+      <p><i class="fas fa-envelope"></i> E-mail: dkcareerboost@gmail.com</p>
     </div>
     <div class="social-media">
       <a href="#">📘 Facebook</a>
@@ -104,3 +107,4 @@
   </footer>
 </body>
 </html>
+
