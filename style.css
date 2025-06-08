@@ -1,320 +1,394 @@
-/* Reset and basics */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
+html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  scroll-behavior: smooth;
-  background: #fff;
+  height: 100%;
+  background: #f9f9f9;
   color: #222;
+
 }
 
-body, .page-wrapper {
+.page-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Navbar styles */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #004aad;
+  background: #004080;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
   position: relative;
   flex-wrap: wrap;
-  z-index: 1000;
 }
 
+/* Logo */
 .logo img {
-  height: 50px;
-  width: auto;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
+/* Channel Name */
 .channel-name {
-  flex: 1;
   text-align: center;
-  user-select: none;
+  flex: 1;
 }
 
 .channel-name h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 1.8rem;
+  margin-bottom: 0;
 }
 
 .channel-name .tagline {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-style: italic;
-  margin-top: 2px;
-  color: #e0e0e0;
+  opacity: 0.85;
 }
 
-/* Navigation Links */
+/* Nav Toggle - hamburger menu for mobile */
+.nav-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+  color: white;
+}
+
+/* Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 20px;
 }
 
-.nav-links a, 
-.dropbtn, .subdropbtn {
+/* Nav Links - links style */
+.nav-links a {
   color: white;
   text-decoration: none;
-  padding: 0.4rem 0.7rem;
   font-weight: 600;
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  user-select: none;
-}
-
-.nav-links a:hover,
-.dropbtn:hover,
-.subdropbtn:hover {
-  background: #003080;
+  padding: 8px 10px;
   border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-/* Sign Up button */
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sign Up Button */
 .btn {
-  background-color: #ff6600;
-  padding: 0.45rem 1rem;
-  border-radius: 5px;
+  background-color: #ff5722;
+  color: white !important;
   font-weight: 700;
-  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #cc5200;
-  color: white;
+  background-color: #e64a19;
 }
 
-/* Dropdown */
+/* Dropdown styles for desktop */
 .dropdown {
   position: relative;
+  user-select: none;
+  list-style-type: none;
+}
+
+.dropdown > a {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+    list-style-type: none;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #004aad;
-  border-radius: 0 0 6px 6px;
-  min-width: 200px;
+  background: #004080;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   display: none;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   z-index: 1000;
+    list-style-type: none;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+    list-style-type: none;
 }
 
 .dropdown-menu li {
-  list-style: none;
   position: relative;
+    list-style-type: none;
 }
 
-/* Subsubmenu */
+.dropdown-menu li a {
+  padding: 10px 15px;
+  display: block;
+  font-weight: normal;
+  white-space: nowrap;
+    list-style-type: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #003366;
+    list-style-type: none;
+}
+
+/* Sub submenu (second level) */
+.dropdown-sub > a {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    list-style-type: none;
+}
+
 .subsubmenu {
   position: absolute;
   top: 0;
   left: 100%;
-  background-color: #004aad;
-  border-radius: 0 6px 6px 6px;
+  background: #003366;
   min-width: 180px;
+  border-radius: 6px;
   display: none;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    list-style-type: none;
 }
 
-.subsubmenu li {
-  padding: 0;
+.dropdown-sub:hover > .subsubmenu {
+  display: flex;
+    list-style-type: none;
 }
 
-/* Show dropdown on hover for desktop */
-@media (hover: hover) and (pointer: fine) {
-  .dropdown:hover > .dropdown-menu {
-    display: flex;
-  }
-
-  .dropdown-sub:hover > .subsubmenu {
-    display: flex;
-  }
-
-  .dropbtn, .subdropbtn {
-    cursor: default;
-  }
+.subsubmenu li a:hover {
+  background-color: #002244;
+    list-style-type: none;
 }
 
-/* Mobile toggle */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Mobile view */
-@media (max-width: 900px) {
-  .channel-name {
-    order: 2;
-    flex-basis: 100%;
-    margin: 0.25rem 0;
-    text-align: center;
-  }
-
-  .nav-toggle {
-    display: block;
-    order: 3;
-  }
-
-  .nav-links {
-    order: 4;
-    flex-direction: column;
-    width: 100%;
-    background-color: #004aad;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav-links.open {
-    max-height: 600px; /* enough for menu */
-  }
-
-  .nav-links a, .dropbtn, .subdropbtn {
-    padding: 0.8rem 1rem;
-    border-top: 1px solid #003080;
-  }
-
-  /* Dropdown menu mobile */
-  .dropdown-menu, .subsubmenu {
-    position: static;
-    box-shadow: none;
-    background-color: #0051d4;
-    border-radius: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .dropdown-menu.open, .subsubmenu.open {
-    max-height: 500px;
-  }
-
-  /* Buttons styling for dropdown toggles */
-  .dropbtn, .subdropbtn {
-    width: 100%;
-    text-align: left;
-    font-weight: 700;
-  }
-}
-
-/* Marquee Section */
+/* Marquee section */
 .marquee-section {
-  background-color: #ffe4b5;
-  padding: 0.5rem;
+  background-color: #faf79d;
+  padding: 10px 0;
   text-align: center;
-  font-weight: 700;
-  color: #7a4700;
-}
-
-.marquee {
-  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
 }
 
 /* Mission Section */
 .mission {
-  padding: 2rem 1rem;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 20px auto 40px auto;
+  padding: 0 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .mission h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
   text-align: center;
-  color: #004aad;
+  margin-bottom: 10px;
+  color: #004080;
 }
 
 .mission h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
   text-align: center;
-  font-style: italic;
-  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #0066cc;
 }
 
 .mission p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
 .mission ul {
   list-style-type: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding-left: 20px;
+  margin-bottom: 15px;
 }
 
 .mission ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
 /* Footer */
 .contact-footer {
-  background-color: #004aad;
+  background-color: #004080;
   color: white;
-  padding: 2rem 1rem;
+  padding: 20px 15px;
   text-align: center;
-  margin-top: auto;
 }
 
 .contact-footer h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
 .contact-links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .contact-links a {
   color: white;
-  font-weight: 600;
   text-decoration: none;
-  font-size: 1rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+ 
+  transition: background-color 0.3s ease;
 }
 
 .contact-links a:hover {
-  color: #ffcc00;
+  background-color: #003366;
 }
 
-.contact-footer i {
-  font-size: 1.3rem;
+.contact-links i {
+  font-size: 1.2rem;
 }
 
-/* Copyright */
-.contact-footer p {
+.copyright {
   font-size: 0.9rem;
-  margin-top: 1rem;
-  opacity: 0.8;
+  opacity: 0.7;
 }
+
+/* RESPONSIVE STYLES */
+
+/* Mobile */
+@media (max-width: 900px) {
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  /* Hide desktop nav links */
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #004080;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 2000;
+  }
+
+  /* Show nav links when active */
+  .nav-links.active {
+    max-height: 500px; /* enough height to show menu */
+  }
+
+  .nav-links a {
+    padding: 12px 20px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Show nav toggle */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Logo and channel name */
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .channel-name {
+    flex: unset;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  /* Dropdown style changes for mobile */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown > a.dropdown-toggle {
+    display: block;
+    padding: 12px 20px;
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    background: #0059b3;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  .dropdown-menu li a {
+    padding-left: 35px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Subsubmenu for mobile */
+  .dropdown-sub > a.submenu-toggle {
+    padding-left: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .subsubmenu {
+    position: static;
+    display: none;
+    background: #0073e6;
+  }
+
+  .subsubmenu.active {
+    display: block;
+  }
+
+  .subsubmenu li a {
+    padding-left: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+}
+
+.main-content
+{flex: 1;}
