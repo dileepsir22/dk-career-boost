@@ -1,27 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
+// Toggle mobile menu open/close
+const navToggle = document.getElementById("nav-toggle");
+const navLinks = document.getElementById("nav-links");
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-  // Dropdown toggles for mobile
-  const dropdownButtons = document.querySelectorAll('.dropbtn, .subdropbtn');
+// Dropdown for mobile - Courses main dropdown
+const coursesDropdownToggle = document.querySelector(".dropdown-toggle");
+const coursesDropdownMenu = document.querySelector(".dropdown-menu");
 
-  dropdownButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
+coursesDropdownToggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  coursesDropdownMenu.classList.toggle("active");
+});
 
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !isExpanded);
+// Dropdown-sub toggles (for submenu items)
+const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
-      // Find next sibling dropdown menu or subsubmenu
-      const dropdownMenu = btn.nextElementSibling;
-
-      if (!dropdownMenu) return;
-
-      dropdownMenu.classList.toggle('open');
-    });
+submenuToggles.forEach((toggle) => {
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Find the subsubmenu for this toggle
+    const subsubmenu = toggle.nextElementSibling;
+    if (subsubmenu) {
+      subsubmenu.classList.toggle("active");
+    }
   });
 });
