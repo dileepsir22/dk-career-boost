@@ -1,62 +1,103 @@
-/* Reset & basic styles */
+/* Reset and basics */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  height: 100%;
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background: #fff;
+  color: #222;
 }
 
-/* Navbar */
+body, .page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  justify-content: space-between;
   background-color: #004aad;
-  color: #fff;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: relative;
   flex-wrap: wrap;
+  z-index: 1000;
 }
 
 .logo img {
   height: 50px;
+  width: auto;
+}
+
+.channel-name {
+  flex: 1;
+  text-align: center;
+  user-select: none;
 }
 
 .channel-name h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.tagline {
-  font-size: 0.8rem;
+.channel-name .tagline {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 2px;
+  color: #e0e0e0;
 }
 
-.nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
+/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
-.nav-links a {
+.nav-links a, 
+.dropbtn, .subdropbtn {
   color: white;
   text-decoration: none;
-  padding: 0.5rem;
-  transition: background 0.3s;
+  padding: 0.4rem 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  user-select: none;
 }
 
-.nav-links a:hover {
-  background: #003580;
+.nav-links a:hover,
+.dropbtn:hover,
+.subdropbtn:hover {
+  background: #003080;
+  border-radius: 4px;
+}
+
+/* Sign Up button */
+.btn {
+  background-color: #ff6600;
+  padding: 0.45rem 1rem;
   border-radius: 5px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc5200;
+  color: white;
 }
 
 /* Dropdown */
@@ -65,203 +106,215 @@ body {
 }
 
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background: white;
-  border: 1px solid #ccc;
-  min-width: 180px;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #000;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  background: #eee;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Marquee */
-.marquee-section {
-  padding: 0.5rem;
-  background: #ffe100;
-  font-weight: bold;
-  text-align: center;
-}
-
-.marquee {
-  color: #333;
-  font-size: 1rem;
-}
-
-/* Mission section */
-.mission {
-  padding: 2rem;
-  background: #fff;
-}
-
-.mission h2 {
-  color: #004aad;
-}
-
-.mission ul {
-  margin: 1rem 0;
-  padding-left: 1.2rem;
-}
-
-/* Footer */
-footer {
-  background: #100f0f;
-  color: #fb0606;
-  text-align: center;
-  padding: 10px;
-  min-height: auto;
-  flex: 1;
-  height: 100%;
-}
-
-footer a {
-  color: #00bfff;
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #004aad;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-}
-
-
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Navbar */
-.navbar {
-  background-color: #004080;
-  padding: 1rem;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 0.1cm;
-}
-
-.nav-menu li {
-  position: relative;
-}
-
-.nav-menu a {
-  color: #fff;
-  padding: 0.75rem 1.2rem;
-  display: block;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.nav-menu a:hover {
-  background-color: #0066cc;
-}
-
-/* Main submenu */
-.submenu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #004080;
-  min-width: 190px;
+  background-color: #004aad;
+  border-radius: 0 0 6px 6px;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
-.dropdown:hover > .submenu {
-  display: block;
+.dropdown-menu li {
+  list-style: none;
+  position: relative;
 }
 
 /* Subsubmenu */
 .subsubmenu {
+  position: absolute;
   top: 0;
   left: 100%;
+  background-color: #004aad;
+  border-radius: 0 6px 6px 6px;
+  min-width: 180px;
   display: none;
-  position: absolute;
-  background-color: #004080;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-.dropdown-sub:hover > .subsubmenu {
-  display: block;
+.subsubmenu li {
+  padding: 0;
 }
 
-.submenu li {
-  position: relative;
-}
-
-/* Responsive Menu Toggle */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* Responsive Mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    display: none;
-    width: 100%;
-  }
-
-  .nav-menu.active {
+/* Show dropdown on hover for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .dropdown:hover > .dropdown-menu {
     display: flex;
   }
 
-  .submenu, .subsubmenu {
-    position: static;
-    display: none;
-    background-color: #004080;
+  .dropdown-sub:hover > .subsubmenu {
+    display: flex;
   }
 
-  .dropdown:hover .submenu,
-  .dropdown-sub:hover .subsubmenu {
-    display: block;
+  .dropbtn, .subdropbtn {
+    cursor: default;
   }
+}
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 900px) {
+  .channel-name {
+    order: 2;
+    flex-basis: 100%;
+    margin: 0.25rem 0;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+    order: 3;
+  }
+
+  .nav-links {
+    order: 4;
+    flex-direction: column;
+    width: 100%;
+    background-color: #004aad;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 600px; /* enough for menu */
+  }
+
+  .nav-links a, .dropbtn, .subdropbtn {
+    padding: 0.8rem 1rem;
+    border-top: 1px solid #003080;
+  }
+
+  /* Dropdown menu mobile */
+  .dropdown-menu, .subsubmenu {
+    position: static;
+    box-shadow: none;
+    background-color: #0051d4;
+    border-radius: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .dropdown-menu.open, .subsubmenu.open {
+    max-height: 500px;
+  }
+
+  /* Buttons styling for dropdown toggles */
+  .dropbtn, .subdropbtn {
+    width: 100%;
+    text-align: left;
+    font-weight: 700;
+  }
+}
+
+/* Marquee Section */
+.marquee-section {
+  background-color: #ffe4b5;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: #7a4700;
+}
+
+.marquee {
+  font-size: 1rem;
+}
+
+/* Mission Section */
+.mission {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #004aad;
+}
+
+.mission h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+}
+
+.mission p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.mission ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.contact-footer {
+  background-color: #004aad;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.contact-footer h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ffcc00;
+}
+
+.contact-footer i {
+  font-size: 1.3rem;
+}
+
+/* Copyright */
+.contact-footer p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.8;
 }
