@@ -2,109 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DK Career Boost</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img src="assets/logos/logo.jpg" alt="DK Career Boost Logo"/>
-    </div>
-    <div class="channel-name">
-      <h1>DK Career Boost</h1>
-      <p class="tagline">Boosting Dreams into Reality</p>
-    </div>
-    <div class="nav-toggle" id="nav-toggle">
-      <i class="fas fa-bars"></i>
-    </div>
-    <nav class="nav-links" id="nav-links">
-      <a href="#">Home</a>
-      <a href="aboutus.html">About Us</a>
-      
-        <nav class="navbar">
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <ul class="nav-menu" id="nav-menu">
-    <li class="dropdown">
-      <a href="#">Courses ▾</a>
-      <ul class="submenu">
-        <li class="dropdown-sub">
-          <a href="#">CG Vyapam ▸</a>
-          <ul class="submenu subsubmenu">
-            <li><a href="#">Prayogshala Paricharak</a></li>
-          </ul>
-        </li>
+  <div class="page-wrapper">
 
-        <li class="dropdown-sub">
-          <a href="#">UGC NET ▸</a>
-          <ul class="submenu subsubmenu">
-            <li><a href="#">Geography</a></li>
-          </ul>
-        </li>
+    <header class="navbar">
+      <div class="logo">
+        <img src="assets/logos/logo.jpg" alt="DK Career Boost Logo" />
+      </div>
 
-        <li class="dropdown-sub">
-          <a href="#">School Academy ▸</a>
-          <ul class="submenu subsubmenu">
-            <li><a href="#">6th CG Board</a></li>
-            <li><a href="#">7th CG Board</a></li>
-            <li><a href="#">8th CG Board</a></li>
-            <li><a href="#">10th CG Board</a></li>
-            <li><a href="#">12th CG Board</a></li>
+      <div class="channel-name">
+        <h1>DK Career Boost</h1>
+        <p class="tagline">Boosting Dreams into Reality</p>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary Navigation">
+        <a href="#">Home</a>
+        <a href="aboutus.html">About Us</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
+            Courses <i class="fas fa-caret-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-sub">
+              <button class="subdropbtn" aria-expanded="false" aria-haspopup="true">
+                CG Vyapam <i class="fas fa-caret-right"></i>
+              </button>
+              <ul class="subsubmenu">
+                <li><a href="#">Prayogshala Paricharak</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-sub">
+              <button class="subdropbtn" aria-expanded="false" aria-haspopup="true">
+                UGC NET <i class="fas fa-caret-right"></i>
+              </button>
+              <ul class="subsubmenu">
+                <li><a href="#">Geography</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-sub">
+              <button class="subdropbtn" aria-expanded="false" aria-haspopup="true">
+                School Academy <i class="fas fa-caret-right"></i>
+              </button>
+              <ul class="subsubmenu">
+                <li><a href="#">6th CG Board</a></li>
+                <li><a href="#">7th CG Board</a></li>
+                <li><a href="#">8th CG Board</a></li>
+                <li><a href="#">10th CG Board</a></li>
+                <li><a href="#">12th CG Board</a></li>
+              </ul>
+            </li>
           </ul>
-        </li>
+        </div>
+
+        <a href="https://youtube.com/@dkcareerboost" target="_blank" rel="noopener">YouTube</a>
+        <a href="login.html">Sign In</a>
+        <a href="signup.html" class="btn">Sign Up</a>
+      </nav>
+    </header>
+
+    <section class="marquee-section" aria-label="Important announcements">
+      <marquee class="marquee" behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+        <span>Admission open</span> | <span>New test series</span> | <span>New Batch for ADEO</span>
+      </marquee>
+    </section>
+
+    <section class="mission">
+      <h2>About Our Mission 🎓</h2>
+      <h3>Welcome to DK Career Boost ✨ Boosting Dreams into Reality ✨</h3>
+      <p>DK Career Boost is not just an educational channel — it's a mission-driven platform created to guide, inspire, and empower students and aspirants for exams like CG Vyapam, UGC NET (Geography), and Board Exams.</p>
+      <ul>
+        <li>Concept-based learning tailored to competitive exams</li>
+        <li>Complete syllabus coverage with smart tips</li>
+        <li>Previous year questions & mock tests</li>
+        <li>Motivational sessions to keep your energy high</li>
+        <li>Personalized guidance for better career planning</li>
       </ul>
-    </li>
-  </ul>
-</nav>
+      <p>Our tagline "Boosting Dreams into Reality" reflects our commitment to your success.</p>
+    </section>
 
-      <a href="https://youtube.com/@dkcareerboost" target="_blank">YouTube</a>
-      <a href="login.html">Sign In</a>
-      <a href="signup.html" class="btn">Sign Up</a>
-    </nav>
-  </header>
+    <footer class="contact-footer">
+      <h2>📞 Contact Us – DK Career Boost</h2>
 
-  <section class="marquee-section">
-    <span class="label">What's New:</span>
-    <marquee class="marquee">
-      <span>Admission open</span> | <span>New test series</span> | <span>New Batch for ADEO</span>
-    </marquee>
-  </section>
+      <div class="contact-links">
+        <a href="https://www.youtube.com/@dkcareerboost" target="_blank" rel="noopener">
+          <i class="fab fa-youtube"></i> YouTube Channel
+        </a>
+        <a href="https://whatsapp.com/channel/0029VbAPScvBvvsatnjRHF2l" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp Channel
+        </a>
+        <a href="https://t.me/dkcareerboost" target="_blank" rel="noopener">
+          <i class="fab fa-telegram"></i> Telegram Channel
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61577312361713" target="_blank" rel="noopener">
+          <i class="fab fa-facebook"></i> Facebook Page
+        </a>
+        <a href="mailto:dkcareerboost@gmail.com">
+          <i class="fas fa-envelope"></i> dkcareerboost@gmail.com
+        </a>
+      </div>
 
-  <section class="mission" id="about">
-    <h2>About Our Mission 🎓</h2>
-    <h3>Welcome to DK Career Boost ✨ Boosting Dreams into Reality ✨</h3>
-    <p>
-DK Career Boost is not just an educational channel — it's a mission-driven platform created to guide, inspire, and empower every student and aspirant preparing for competitive exams like CG Vyapam, UGC NET (Geography), 10th & 12th Board Exams, and more.
+      <p class="copyright">© 2025 DK Career Boost. All rights reserved.</p>
+    </footer>
 
-With the belief that every student has the potential to succeed, our channel delivers high-quality, easy-to-understand, and exam-oriented content that lights the path toward your goals. Whether you're preparing for your board exams or aiming for a government job, DK Career Boost provides the perfect blend of clarity, strategy, and motivation to help you excel.    </p>
-    <ul>
-      <li>Concept-based learning tailored to competitive exams</li>
-      <li>Complete syllabus coverage with smart tips</li>
-      <li>Previous year questions & mock tests</li>
-      <li>Motivational sessions to keep your energy high</li>
-      <li>Personalized guidance for better career planning</li>
-    </ul>
-    <p>
-      Our tagline "Boosting Dreams into Reality" reflects our commitment to being your trusted learning partner — turning your hard work into success stories.
-    </p>
-  </section>
-
-  <footer>
-    <div class="contact">
-      <p><i class="fas fa-envelope"></i> E-mail: dkcareerboost@gmail.com</p>
-    </div>
-    <div class="social-media">
-      <a href="#">📘 Facebook</a>
-      <a href="#">📸 Instagram</a>
-      <a href="#">🐦 Twitter</a>
-      <a href="https://youtube.com/@dkcareerboost" target="_blank">▶️ YouTube</a>
-    </div>
-    <div class="copyright">
-      <p>© 2025 DK Career Boost. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
 </body>
 </html>
-
