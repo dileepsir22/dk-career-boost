@@ -1,0 +1,69 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(black);
+  color: #f8f5f5d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  margin: 0;
+}
+
+.signup-container {
+  background-color: rgba(12, 161, 254, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 2px solid #00ffff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #00ffff;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #00c3cc;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    padding: 20px;
+  }
+}
