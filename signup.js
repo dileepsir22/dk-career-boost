@@ -1,52 +1,28 @@
-import { auth, db, storage } from "./firebase-config.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
-import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js";
+// ✅ dashboard.js import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"; import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"; import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-const adminEmail = "dkcareerboost@gmail.com";
+const firebaseConfig = { apiKey: "AIzaSyDsMkUMvY8IkJCVJdTVc8E8C63tLZDt_nE", authDomain: "dk-career-boost-final.firebaseapp.com", projectId: "dk-career-boost-final", storageBucket: "dk-career-boost-final.appspot.com", messagingSenderId: "181255535409", appId: "1:181255535409:web:bc1e65d0456be6b2b173b6" };
 
-function generateStudentID() {
-  return "STU" + Math.floor(Math.random() * 10000000);
+const app = initializeApp(firebaseConfig); const auth = getAuth(app); const db = getFirestore(app);
+
+onAuthStateChanged(auth, async (user) => { if (!user) { window.location.href = "login.html"; } else { const docRef = doc(db, "students", user.uid); const docSnap = await getDoc(docRef);
+
+if (docSnap.exists()) {
+  const data = docSnap.data();
+  document.getElementById("studentName").textContent = data.fullName;
+  document.getElementById("name").textContent = data.fullName;
+  document.getElementById("gender").textContent = data.gender;
+  document.getElementById("class").textContent = data.studentClass;
+  document.getElementById("dob").textContent = data.dob;
+  document.getElementById("mobile").textContent = data.mobile;
+  document.getElementById("email").textContent = data.email;
+  document.getElementById("address").textContent = data.address;
+  document.getElementById("id").textContent = data.studentID;
+  document.getElementById("photo").src = data.photoURL;
+} else {
+  alert("Profile not found!");
 }
 
-document.getElementById("signupForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+} });
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const fullName = document.getElementById("fullName").value;
-  const gender = document.getElementById("gender").value;
-  const studentClass = document.getElementById("studentClass").value;
-  const dob = document.getElementById("dob").value;
-  const mobile = document.getElementById("mobile").value;
-  const address = document.getElementById("address").value;
-  const photoFile = document.getElementById("photo").files[0];
+document.getElementById("logout").addEventListener("click", () => { signOut(auth).then(() => { window.location.href = "login.html"; }); });
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const uid = userCredential.user.uid;
-    const studentID = generateStudentID();
-
-    const photoRef = ref(storage, `students/${uid}/profile.jpg`);
-    await uploadBytes(photoRef, photoFile);
-    const photoURL = await getDownloadURL(photoRef);
-
-    await setDoc(doc(db, "students", uid), {
-      email,
-      fullName,
-      gender,
-      studentClass,
-      dob,
-      mobile,
-      address,
-      studentID,
-      photoURL,
-      approved: email === adminEmail ? true : false
-    });
-
-    alert("🎉 Signup successful! Waiting for admin approval.");
-    window.location.href = "login.html";
-  } catch (error) {
-    alert("❌ Error: " + error.message);
-  }
-});
