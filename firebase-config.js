@@ -4,14 +4,16 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.1/firebase
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDsMkUMvY8IkJCVJdTVc8E8C63tLZDt_nE",
-  authDomain: "dk-career-boost-final.firebaseapp.com",
-  projectId: "dk-career-boost-final",
-  storageBucket: "dk-career-boost-final.appspot.com",
-  messagingSenderId: "181255535409",
-  appId: "1:181255535409:web:bc1e65d0456be6b2b173b6"
-};
+      apiKey: "AIzaSyAUm4232lt2pQTWSNsnyojrpmMTPKNU1r8",
+      authDomain: "dk-career-boost.firebaseapp.com",
+      projectId: "dk-career-boost",
+      storageBucket: "dk-career-boost.appspot.com",
+      messagingSenderId: "1020282426285",
+      appId: "1:1020282426285:android:51202a9258041871540724"
+    };
 
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
