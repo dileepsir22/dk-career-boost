@@ -1,31 +1,34 @@
-// Optional: Dynamic name rendering after login
-document.addEventListener("DOMContentLoaded", () => {
-  const student = {
-    name: "Dileep Kumar Banjare",
-    id: "S123456",
-    gender: "Male",
-    class: "12th",
-    dob: "10-Jan-2006",
-    mobile: "9876543210",
-    email: "student@example.com",
-    address: "Raipur, Chhattisgarh",
-    photo: "https://via.placeholder.com/150"
-  };
+import { auth, db } from "./firebase-config.js";
+import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
 
-  document.getElementById("studentName").innerText = student.name;
-  document.getElementById("name").innerText = student.name;
-  document.getElementById("id").innerText = student.id;
-  document.getElementById("gender").innerText = student.gender;
-  document.getElementById("class").innerText = student.class;
-  document.getElementById("dob").innerText = student.dob;
-  document.getElementById("mobile").innerText = student.mobile;
-  document.getElementById("email").innerText = student.email;
-  document.getElementById("address").innerText = student.address;
-  document.getElementById("photo").src = student.photo;
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    window.location.href = "login.html";
+  } else {
+    const docRef = doc(db, "students", user.uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      document.getElementById("studentName").textContent = data.fullName;
+      document.getElementById("name").textContent = data.fullName;
+      document.getElementById("gender").textContent = data.gender;
+      document.getElementById("class").textContent = data.studentClass;
+      document.getElementById("dob").textContent = data.dob;
+      document.getElementById("mobile").textContent = data.mobile;
+      document.getElementById("email").textContent = data.email;
+      document.getElementById("address").textContent = data.address;
+      document.getElementById("id").textContent = data.studentID;
+      document.getElementById("photo").src = data.photoURL;
+    } else {
+      alert("Profile not found!");
+    }
+  }
 });
 
-// Logout event
 document.getElementById("logout").addEventListener("click", () => {
-  alert("Logging out...");
-  // You can redirect to login page here
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
 });
