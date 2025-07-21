@@ -1,0 +1,8 @@
+-- Enable RLS
+ALTER TABLE students ENABLE ROW LEVEL SECURITY;
+
+-- Only allow users to access their own records
+CREATE POLICY "Users can access their own records"
+  ON students
+  FOR ALL
+  USING (auth.uid() = user_id);
