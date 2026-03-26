@@ -1,4 +1,4 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +12,14 @@ html, body {
   color: #222;
 }
 
+/* ================= LAYOUT ================= */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
   align-items: center;
@@ -27,7 +28,7 @@ html, body {
   color: white;
   padding: 10px 15px;
   position: relative;
-  flex-wrap: wrap;
+  height: 70px; /* FIXED HEIGHT */
 }
 
 /* Logo */
@@ -54,7 +55,7 @@ html, body {
   opacity: 0.85;
 }
 
-/* Nav Toggle */
+/* Toggle */
 .nav-toggle {
   font-size: 1.8rem;
   cursor: pointer;
@@ -75,12 +76,12 @@ html, body {
   font-weight: 600;
   padding: 8px 10px;
   border-radius: 4px;
-  
+  transition: background 0.3s ease;
 }
+
 .nav-links a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 
 /* Button */
 .btn {
@@ -93,10 +94,9 @@ html, body {
   background-color: #e64a19;
 }
 
-/* Dropdown */
+/* ================= DROPDOWN ================= */
 .dropdown {
   position: relative;
-  list-style: none;
 }
 
 .dropdown-menu {
@@ -129,7 +129,7 @@ html, body {
   display: flex;
 }
 
-/* Main Layout */
+/* ================= CONTENT ================= */
 .main-content {
   flex: 1;
 }
@@ -162,178 +162,27 @@ html, body {
   border-radius: 8px;
 }
 
-/* Footer */
-.footer {
-  background: #004080;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 10px;
-  font-family: Arial, sans-serif;
-}
-.contact-footer h2 {
-  margin-bottom: 15px;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.contact-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 6px;
- 
-  transition: background-color 0.3s ease;
-}
-
-.contact-links a:hover {
-  background-color: #003366;
-}
-
-.contact-links i {
-  font-size: 1.2rem;
-}
-
-.copyright {
-  font-size: 0.9rem;
-  opacity: 0.7;
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    width: 100%;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    background: #004080;
-  }
-
-  .nav-links.active {
-    max-height: 500px;
-  }
-
-  .nav-links a {
-    padding: 10px;
-  }
-
-  .dropdown-menu,
-  .subsubmenu {
-    position: static;
-    display: none;
-    width: 100%;
-  }
-
-  .dropdown-menu.active,
-  .subsubmenu.active {
-    display: block;
-  }
-
-  .split-container {
-    flex-direction: column;
-  }
-
-  .channel-name h1 {
-    font-size: 16px;
-  }
-}
-/* ===== MOBILE RESPONSIVE FIX (DO NOT REMOVE ORIGINAL CSS) ===== */
-
-@media (max-width: 768px) {
-
-  /* Show toggle button */
-  .nav-toggle {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Hide menu by default */
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: #0f172a;
-    flex-direction: column;
-    display: none;
-    padding: 10px 0;
-  }
-
-  /* Show menu when active */
-  .nav-links.active {
-    display: flex;
-  }
-
-  /* Links styling */
-  .nav-links a {
-    padding: 12px;
-    display: block;
-    text-align: center;
-  }
-
-  /* Dropdown fix for mobile */
-  .dropdown-menu {
-    display: none;
-    position: static;
-    background: #1e293b;
-  }
-
-  .dropdown-menu.active {
-    display: block;
-  }
-
-  /* Submenu fix */
-  .subsubmenu {
-    display: none;
-  }
-
-  .subsubmenu.active {
-    display: block;
-  }
-}
-
-
-/* Footer Container */
+/* ================= FOOTER ================= */
 .footer {
   background-color: #0d4b87;
   color: #ffffff;
   text-align: center;
   padding: 20px 10px;
-  font-family: Arial, sans-serif;
 }
 
-/* Title */
 .footer h2 {
   font-size: 22px;
   margin-bottom: 12px;
-  font-weight: 600;
 }
 
-/* Links Container */
 .footer .footer-links {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   gap: 18px;
   margin-bottom: 10px;
 }
 
-/* Individual Link */
 .footer .footer-links a {
   text-decoration: none;
   color: #ffffff;
@@ -341,31 +190,79 @@ html, body {
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: 0.3s;
 }
 
-/* Hover Effect */
 .footer .footer-links a:hover {
   color: #ffcc00;
 }
 
-/* Icons */
-.footer .footer-links i {
-  font-size: 16px;
-}
-
-/* Copyright */
 .footer .copyright {
   font-size: 14px;
   margin-top: 10px;
   opacity: 0.8;
 }
 
-/* ========================= */
-/* MOBILE RESPONSIVE DESIGN  */
-/* ========================= */
+/* ================= GLOBAL FIX ================= */
+a, button {
+  transform: none !important; /* STOP CLICK SHIFT */
+}
 
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+  }
+
+  /* FIXED: NO max-height animation */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #004080;
+    flex-direction: column;
+    display: none; /* IMPORTANT */
+  }
+
+  .nav-links.active {
+    display: flex; /* NO MOVEMENT */
+  }
+
+  .nav-links a {
+    padding: 12px;
+    text-align: center;
+  }
+
+  /* Dropdown Mobile Fix */
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  .subsubmenu {
+    display: none;
+  }
+
+  .subsubmenu.active {
+    display: block;
+  }
+
+  /* Layout */
+  .split-container {
+    flex-direction: column;
+  }
+
+  .channel-name h1 {
+    font-size: 16px;
+  }
+
+  /* Footer */
   .footer h2 {
     font-size: 18px;
   }
@@ -374,12 +271,4 @@ html, body {
     flex-direction: column;
     gap: 10px;
   }
-
-  .footer .footer-links a {
-    font-size: 14px;
-  }
-}
-
-a:active, button:active {
-  transform: none;
 }
