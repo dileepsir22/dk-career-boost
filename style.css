@@ -28,7 +28,7 @@ html, body {
   color: white;
   padding: 10px 15px;
   position: relative;
-  height: 70px; /* FIXED HEIGHT */
+  height: 70px;
 }
 
 /* Logo */
@@ -55,7 +55,7 @@ html, body {
   opacity: 0.85;
 }
 
-/* Toggle */
+/* Toggle Button */
 .nav-toggle {
   font-size: 1.8rem;
   cursor: pointer;
@@ -146,15 +146,10 @@ html, body {
   border-radius: 10px;
 }
 
-.left {
-  flex: 2;
-}
+.left { flex: 2; }
+.right { flex: 1; }
 
-.right {
-  flex: 1;
-}
-
-/* News */
+/* News Box */
 .news-box {
   background: #e3f2fd;
   margin-bottom: 10px;
@@ -163,13 +158,11 @@ html, body {
 }
 
 /* ================= FOOTER ================= */
-/* Footer Container */
 .footer {
   background-color: #0d4b87;
   color: #ffffff;
   text-align: center;
   padding: 20px 10px;
-  font-family: Arial, sans-serif;
 }
 
 /* Title */
@@ -179,8 +172,8 @@ html, body {
   font-weight: 600;
 }
 
-/* Links Container */
-.footer .footer-links {
+/* Links */
+.footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,24 +182,22 @@ html, body {
   margin-bottom: 10px;
 }
 
-/* Individual Link */
-.footer .footer-links a {
+.footer-links a {
   text-decoration: none;
   color: #ffffff;
   font-size: 15px;
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
-/* Hover Effect */
-.footer .footer-links a:hover {
+.footer-links a:hover {
   color: #ffcc00;
 }
 
 /* Icons */
-.footer .footer-links i {
+.footer-links i {
   font-size: 16px;
 }
 
@@ -217,37 +208,26 @@ html, body {
   opacity: 0.8;
 }
 
-/* ========================= */
-/* MOBILE RESPONSIVE DESIGN  */
-/* ========================= */
-
-@media (max-width: 768px) {
-  .footer h2 {
-    font-size: 18px;
-  }
-
-  .footer .footer-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer .footer-links a {
-    font-size: 14px;
-  }
-}
 /* ================= GLOBAL FIX ================= */
+/* Prevent click shifting issue */
 a, button {
-  transform: none !important; /* STOP CLICK SHIFT */
+  position: relative;
+  top: 0;
 }
 
-/* ================= MOBILE FIX ================= */
+a:active, button:active {
+  top: 0;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
 
+  /* Toggle visible */
   .nav-toggle {
     display: block;
   }
 
-  /* FIXED: NO max-height animation */
+  /* Mobile Menu */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -255,11 +235,11 @@ a, button {
     width: 100%;
     background: #004080;
     flex-direction: column;
-    display: none; /* IMPORTANT */
+    display: none;
   }
 
   .nav-links.active {
-    display: flex; /* NO MOVEMENT */
+    display: flex;
   }
 
   .nav-links a {
@@ -291,6 +271,7 @@ a, button {
     flex-direction: column;
   }
 
+  /* Text Resize */
   .channel-name h1 {
     font-size: 16px;
   }
@@ -300,7 +281,7 @@ a, button {
     font-size: 18px;
   }
 
-  .footer .footer-links {
+  .footer-links {
     flex-direction: column;
     gap: 10px;
   }
