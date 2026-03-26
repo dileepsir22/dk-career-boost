@@ -33,3 +33,10 @@ submenuToggles.forEach(toggle => {
     }
   });
 });
+
+// Prevent # links jump issue
+document.querySelectorAll('a[href="#"]').forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+  });
+});
