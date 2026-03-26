@@ -164,12 +164,11 @@ html, body {
 
 /* Footer */
 .contact-footer {
-  background-color: #Blue
-  color: White;
+  background-color: #004080;
+  color: white;
   padding: 20px 15px;
   text-align: center;
 }
-
 .contact-footer h2 {
   margin-bottom: 15px;
 }
