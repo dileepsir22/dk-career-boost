@@ -164,11 +164,48 @@ html, body {
 
 /* Footer */
 .contact-footer {
-  background: #white;
-  color: yellow;
-  padding: 20px;
+  background-color: #004080;
+  color: white;
+  padding: 20px 15px;
   text-align: center;
 }
+
+.contact-footer h2 {
+  margin-bottom: 15px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+ 
+  transition: background-color 0.3s ease;
+}
+
+.contact-links a:hover {
+  background-color: #003366;
+}
+
+.contact-links i {
+  font-size: 1.2rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
