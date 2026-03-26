@@ -388,6 +388,63 @@ html, body {
     padding-left: 50px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
   }
+  .mission-news {
+    display: flex;
+    padding: 40px;
+    background: #f5f6fa;
+    gap: 30px;
+}
+
+/* Left Side */
+.mission {
+    flex: 1;
+}
+
+.mission h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.mission p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.mission ul {
+    margin-top: 15px;
+}
+
+.mission ul li {
+    margin-bottom: 8px;
+}
+
+/* Right Side */
+.news {
+    flex: 1;
+}
+
+.news h2 {
+    margin-bottom: 20px;
+}
+
+.news-box {
+    background: #eaeaea;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #0a3d62;
+    transition: 0.3s;
+}
+
+.news-box:hover {
+    background: #dcdde1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mission-news {
+        flex-direction: column;
+    }
+}
 }
 
 .main-content
