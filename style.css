@@ -164,8 +164,8 @@ html, body {
 
 /* Footer */
 .contact-footer {
-  background: #004080;
-  color: Red;
+  background: #white;
+  color: yellow;
   padding: 20px;
   text-align: center;
 }
