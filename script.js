@@ -76,3 +76,9 @@ form.addEventListener('submit', async (e) => {
     form.reset();
   }
 });
+// Optional hover log (for testing)
+document.querySelectorAll(".news-box").forEach(box => {
+    box.addEventListener("click", () => {
+        console.log("News clicked:", box.innerText);
+    });
+});
