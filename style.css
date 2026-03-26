@@ -307,7 +307,78 @@ html, body {
 }
 
 
+/* Footer Container */
+.footer {
+  background-color: #0d4b87;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+}
 
+/* Title */
+.footer h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Links Container */
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+/* Individual Link */
+.footer .footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+.footer .footer-links a:hover {
+  color: #ffcc00;
+}
+
+/* Icons */
+.footer .footer-links i {
+  font-size: 16px;
+}
+
+/* Copyright */
+.footer .copyright {
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN  */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .footer h2 {
+    font-size: 18px;
+  }
+
+  .footer .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer .footer-links a {
+    font-size: 14px;
+  }
+}
 
 a:active, button:active {
   transform: none;
