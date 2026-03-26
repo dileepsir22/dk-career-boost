@@ -213,3 +213,58 @@ html, body {
     font-size: 16px;
   }
 }
+/* ===== MOBILE RESPONSIVE FIX (DO NOT REMOVE ORIGINAL CSS) ===== */
+
+@media (max-width: 768px) {
+
+  /* Show toggle button */
+  .nav-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Hide menu by default */
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #0f172a;
+    flex-direction: column;
+    display: none;
+    padding: 10px 0;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Links styling */
+  .nav-links a {
+    padding: 12px;
+    display: block;
+    text-align: center;
+  }
+
+  /* Dropdown fix for mobile */
+  .dropdown-menu {
+    display: none;
+    position: static;
+    background: #1e293b;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  /* Submenu fix */
+  .subsubmenu {
+    display: none;
+  }
+
+  .subsubmenu.active {
+    display: block;
+  }
+}
