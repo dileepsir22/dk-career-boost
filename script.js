@@ -78,6 +78,13 @@ form.addEventListener('submit', async (e) => {
 });
 // Optional hover log (for testing)
 document.querySelectorAll(".news-box").forEach(box => {
+
+  // Click event (optional)
+document.querySelectorAll(".news-item").forEach(item => {
+    item.addEventListener("click", () => {
+        alert("Opening details...");
+    });
+});
     box.addEventListener("click", () => {
         console.log("News clicked:", box.innerText);
     });
