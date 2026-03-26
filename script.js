@@ -1,4 +1,4 @@
-// Toggle mobile menu open/close
+// ================= MOBILE MENU =================
 const navToggle = document.getElementById("nav-toggle");
 const navLinks = document.getElementById("nav-links");
 
@@ -8,28 +8,34 @@ if (navToggle && navLinks) {
   });
 }
 
-// Dropdown for mobile - handle ALL dropdowns
-const coursesDropdownToggles = document.querySelectorAll(".dropdown-toggle");
+// ================= DROPDOWNS =================
 
-coursesDropdownToggles.forEach((toggle) => {
+// MAIN DROPDOWN
+const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+dropdownToggles.forEach((toggle) => {
   toggle.addEventListener("click", (e) => {
-    e.preventDefault();
-    const menu = toggle.nextElementSibling;
-    if (menu) {
-      menu.classList.toggle("active");
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const menu = toggle.nextElementSibling;
+      if (menu) {
+        menu.classList.toggle("active");
+      }
     }
   });
 });
 
-// Dropdown-sub toggles (for submenu items)
+// SUB DROPDOWN
 const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
 submenuToggles.forEach((toggle) => {
   toggle.addEventListener("click", (e) => {
-    e.preventDefault();
-    const subsubmenu = toggle.nextElementSibling;
-    if (subsubmenu) {
-      subsubmenu.classList.toggle("active");
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const submenu = toggle.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle("active");
+      }
     }
   });
 });
@@ -83,21 +89,15 @@ if (form && statusText) {
 
 // ================= NEWS BOX =================
 
-// Click log
+// Click log + alert (combined to avoid duplicate listeners)
 document.querySelectorAll(".news-box").forEach(box => {
   box.addEventListener("click", () => {
     console.log("News clicked:", box.innerText);
-  });
-});
-
-// Click alert
-document.querySelectorAll(".news-box").forEach(box => {
-  box.addEventListener("click", () => {
     alert("More details coming soon!");
   });
 });
 
-// News item click (fixed structure)
+// News item click
 document.querySelectorAll(".news-item").forEach(item => {
   item.addEventListener("click", () => {
     alert("Opening details...");
