@@ -89,3 +89,9 @@ document.querySelectorAll(".news-item").forEach(item => {
         console.log("News clicked:", box.innerText);
     });
 });
+// Optional interactivity
+document.querySelectorAll(".news-box").forEach(box => {
+    box.addEventListener("click", () => {
+        alert("More details coming soon!");
+    });
+});
