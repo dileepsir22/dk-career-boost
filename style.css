@@ -134,7 +134,13 @@ html, body {
 .dropdown-sub:hover > .subsubmenu {
   display: flex;
 }
-
+/* ================= marquee section ================= */
+.marquee-section {
+  bakground-color: yellow;}
+.marquee {
+  color: red;
+  font-weight: bold;
+}
 /* ================= CONTENT ================= */
 .main-content {
   flex: 1;
