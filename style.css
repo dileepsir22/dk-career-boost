@@ -109,6 +109,7 @@ html, body {
   display: none;
   flex-direction: column;
   z-index: 1000;
+  list-style: none;
 }
 
 .dropdown:hover > .dropdown-menu {
@@ -123,6 +124,7 @@ html, body {
   background: #003366;
   min-width: 180px;
   display: none;
+  list-style: none;
 }
 
 .dropdown-sub:hover > .subsubmenu {
