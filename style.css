@@ -164,6 +164,7 @@ html, body {
 
 .notice h2 {
   color: #e60000;
+  text-align: center;
 }
 
 /* News Box */
