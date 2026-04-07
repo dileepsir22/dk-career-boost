@@ -104,7 +104,7 @@ html, body {
   top: 100%;
   left: 0;
   background: #004080;
-  min-width: 200px;
+  min-width: 150px;
   border-radius: 8px;
   display: none;
   flex-direction: column;
