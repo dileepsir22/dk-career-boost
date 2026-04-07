@@ -104,13 +104,13 @@ html, body {
   top: 100%;
   left: 0;
   background: #004080;
-  min-width: 130px;
-  border-radius: 6px;
+  min-width: 200px;
+  border-radius: 8px;
   display: none;
   flex-direction: column;
   z-index: 1000;
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
 }
 
@@ -118,28 +118,75 @@ html, body {
   display: flex;
 }
 
-/* Submenu */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ================= Submenu ================= */
+.dropdown-sub {
+  position: relative;
+}
+
 .subsubmenu {
   position: absolute;
   top: 0;
   left: 100%;
   background: #003366;
-  min-width: 130px;
+  min-width: 200px;
   display: none;
+  flex-direction: column;
+  border-radius: 8px;
   list-style: none;
-   padding: 0;
+  padding: 10px 0;
   margin: 0;
 }
 
 .dropdown-sub:hover > .subsubmenu {
   display: flex;
 }
-/* ================= marquee section ================= */
+
+.subsubmenu li {
+  width: 100%;
+}
+
+.subsubmenu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.subsubmenu li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ================= Marquee Section ================= */
 .marquee-section {
-  bakground-color: yellow;}
+  background-color: yellow;
+  padding: 8px 0;
+}
+
 .marquee {
   color: red;
   font-weight: bold;
+  font-size: 16px;
 }
 /* ================= CONTENT ================= */
 .main-content {
