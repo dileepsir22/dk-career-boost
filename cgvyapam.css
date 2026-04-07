@@ -5,14 +5,21 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #f3f4f6;
   color: #1f2937;
+  overflow-x: hidden;
 }
 
+/* ================= HERO SECTION ================= */
 .hero {
-  min-height: 50px;
-  padding: 50px 40px;
+  min-height: 450px;
+  width: 100%;
+  padding: 60px 20px;
 
   display: flex;
   justify-content: center;
@@ -20,45 +27,54 @@ body {
   text-align: center;
   color: white;
 
-  background: 
+  background:
     linear-gradient(rgba(11, 87, 208, 0.7), rgba(26, 115, 232, 0.7)),
-    url("vyapamlogo.png");
+    url("assests/vyapamlogo.png");
 
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .hero-content {
-  max-width: 800px;
+  width: 100%;
+  max-width: 850px;
+  padding: 0 15px;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   color: #fff;
   font-weight: 700;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .hero p {
   color: #e5e7eb;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   margin-bottom: 30px;
+  line-height: 1.7;
 }
 
+/* ================= SEARCH BOX ================= */
 .search-box {
   display: flex;
-  max-width: 2000px;
+  align-items: center;
+  width: 100%;
+  max-width: 850px;
   margin: auto;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .search-box input {
   flex: 1;
+  min-width: 0;
   border: none;
-  padding: 18px;
+  padding: 18px 20px;
   font-size: 1rem;
   outline: none;
 }
@@ -67,25 +83,33 @@ body {
   border: none;
   background: #ff7a00;
   color: #fff;
-  padding: 0 30px;
+  padding: 18px 30px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s ease;
 }
 
+.search-box button:hover {
+  background: #e96d00;
+}
+
+/* ================= GENERAL SECTION ================= */
 .section {
-  width: 90%;
-  max-width: 1500px;
+  width: 92%;
+  max-width: 1400px;
   margin: 60px auto;
 }
 
 .section-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
   margin-bottom: 35px;
   color: #1e3a5f;
 }
 
+/* ================= CARD GRID ================= */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -97,26 +121,36 @@ body {
   padding: 30px 25px;
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h3 {
   color: #0b57d0;
   font-size: 1.4rem;
   margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .card p {
   color: #555;
   line-height: 1.7;
   margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 .card a {
   color: #0b57d0;
   font-weight: 600;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
+/* ================= SUBJECT GRID ================= */
 .subject-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -132,8 +166,15 @@ body {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
 }
 
+.subject-grid button:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= UPDATE SECTION ================= */
 .update-list {
   display: flex;
   flex-direction: column;
@@ -148,31 +189,52 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .icon {
   font-size: 2rem;
+  flex-shrink: 0;
 }
 
-@media (max-width: 992px) {
+/* ================= LARGE TABLETS ================= */
+@media (max-width: 1024px) {
   .card-grid,
   .subject-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero h1 {
-    font-size: 2.3rem;
+  .hero {
+    min-height: 400px;
+    padding: 50px 20px;
+  }
+
+  .card {
+    padding: 25px 20px;
   }
 }
 
+/* ================= TABLETS ================= */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 350px;
+    padding: 50px 15px;
+  }
+
   .search-box {
     flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 16px;
   }
 
   .search-box button {
     width: 100%;
-    padding: 15px;
+    padding: 16px;
+    border-radius: 0;
   }
 
   .card-grid,
@@ -180,25 +242,94 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .section {
+    width: 94%;
+    margin: 50px auto;
   }
 
-  .hero p {
-    font-size: 0.95rem;
+  .card {
+    padding: 22px 18px;
   }
 
-  .section-title {
-    font-size: 1.6rem;
+  .update-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .icon {
+    font-size: 2.2rem;
   }
 }
 
+/* ================= MOBILE DEVICES ================= */
 @media (max-width: 480px) {
+  .hero {
+    min-height: 300px;
+    padding: 40px 12px;
+  }
+
+  .hero-content {
+    padding: 0 5px;
+  }
+
   .hero h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   .hero p {
     font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .search-box input {
+    font-size: 0.9rem;
+    padding: 14px;
+  }
+
+  .search-box button {
+    font-size: 0.95rem;
+    padding: 14px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .subject-grid button {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .update-card {
+    gap: 12px;
+  }
+}
+
+/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 320px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .search-box input,
+  .search-box button {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 18px 15px;
   }
 }
