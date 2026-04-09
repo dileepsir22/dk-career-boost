@@ -36,3 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.getElementById("syllabusBtn").addEventListener("click", function() {
+  window.open(
+    "https://drive.google.com/drive/folders/1UUkbgKldMV7ojhC2Mz0Tr_C8QRP4NLV6?usp=drive_link",
+    "_blank"
+  );
+});
